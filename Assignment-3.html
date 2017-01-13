@@ -1,0 +1,42 @@
+
+<h3>Assignment-3</h3><br><br>
+
+
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+<p>Enter the name to search:</p>
+
+<div >
+<input type="text" ng-model="searchName"><br><br>
+
+<p>Click the table headers to sort:</p>
+<table border="1" width="50%">
+<tr>
+<th ng-click="orderByMe('id')">Id</th>
+<th ng-click="orderByMe('name')">Name</th>
+<th ng-click="orderByMe('technology')">Technology</th>
+
+</tr>
+<tr ng-repeat="x in names | orderBy:myOrderBy | filter: searchName">
+<td>{{x.id}}</td>
+<td>{{x.name}}</td>
+<td>{{x.technology}}</td>
+</tr>
+</table>
+
+</div>
+
+
+

@@ -1,0 +1,57 @@
+
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+</head>
+
+<h3>Assignment-6</h3><br><br>
+
+    <div>
+    <div class="container">
+        <table class="table table-condense" border="1">
+           
+            <thead>
+                <tr class="bg-primary">
+                    <th>Select Product</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items">
+                    <td><input type="checkbox" ng-model="item.select" ng-change="setTotals(item)"></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.price | number:2}}</td>
+                    <td>{{item.total | number:2}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="bg-warning">
+                    <td></td>
+                    <td>Totals</td>
+                    <td>{{invoiceCount}}</td>
+                    <td></td>                    
+                    <td>{{invoiceTotal | number:2}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+
+
+
